@@ -1,22 +1,17 @@
 const refs = {
   formRef: document.querySelector('.login-form'),
-  emailRef: document.querySelector('input[type="email"]'),
-  passwordRef: document.querySelector('input[type="password"]'),
   submitRef: document.querySelector('button[type="submit"]'),
 }
 
+
+
 refs.formRef.addEventListener('submit', (event) => {
   event.preventDefault()
+  const {
+    elements: { email, password },
+  } = event.currentTarget
 
-  const elementE = event.currentTarget.email.value
-  console.log("~ elementE", elementE)
-
-  // const {
-  //   elements: { email, password },
-  // } = event.currentTarget
-  // console.log(elements)
-
-  // if (email.value === '' || password.value === '') {
-  //   return console.log('Please fill in all the fields!')
-  // }
+  email.value === '' || password.value === ''
+    ? alert('Please fill in all the fields!')
+    : console.log({ email: email.value, password: password.value })
 })
