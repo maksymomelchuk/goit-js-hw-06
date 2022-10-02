@@ -3,8 +3,6 @@ const refs = {
   submitRef: document.querySelector('button[type="submit"]'),
 }
 
-
-
 refs.formRef.addEventListener('submit', (event) => {
   event.preventDefault()
   const {
