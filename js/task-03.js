@@ -11,4 +11,15 @@ const images = [
     url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     alt: 'Group of Horses Running',
   },
-];
+]
+
+const galleryRef = document.querySelector('.gallery')
+
+const createMarkup = images
+  .map((image) => {
+    return `<li><img class='task3-img' src='${image.url}' alt='${image.alt}'></li>`
+  })
+  .join('')
+console.log('~ createMarkup', createMarkup)
+
+galleryRef.insertAdjacentHTML('afterbegin', createMarkup)
