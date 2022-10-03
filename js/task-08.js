@@ -9,7 +9,10 @@ refs.formRef.addEventListener('submit', (event) => {
     elements: { email, password },
   } = event.currentTarget
 
-  email.value === '' || password.value === ''
-    ? alert('Please fill in all the fields!')
-    : console.log({ email: email.value, password: password.value })
+  if (email.value === '' || password.value === '') {
+    alert('Please fill in all the fields!')
+  } else {
+    console.log({ email: email.value, password: password.value })
+    event.currentTarget.reset()
+  }
 })
